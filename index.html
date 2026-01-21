@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Solar System</title>
+
+  <!-- A-Frame -->
+  <script src="script/aframe.min.js"></script>
+</head>
+
+<body>
+
+<a-scene>
+
+  <!-- ASSETS -->
+  <a-assets>
+    <img id="sun" src="texture/2k_sun.jpg">
+    <img id="mercury" src="texture/2k_mercury.jpg">
+    <img id="venus" src="texture/2k_venus_surface.jpg">
+    <img id="earth" src="texture/2k_earth_daymap.jpg">
+    <img id="mars" src="texture/2k_mars.jpg">
+    <img id="jupiter" src="texture/2k_jupiter.jpg">
+    <img id="saturn" src="texture/2k_saturn.jpg">
+    <img id="uranus" src="texture/2k_uranus.jpg">
+    <img id="neptune" src="texture/2k_neptune.jpg">
+    <img id="stars" src="texture/2k_stars_milky_way.jpg">
+  </a-assets>
+
+  <!-- BACKGROUND -->
+  <a-sky src="#stars" rotation="0 -90 0"></a-sky>
+
+  <!-- FIXED CAMERA (NO CONTROLS AT ALL) -->
+  <a-camera
+    position="0 6 22"
+    look-controls="enabled: false"
+    wasd-controls="enabled: false"
+    device-orientation-controls="enabled: false">
+  </a-camera>
+
+  <!-- SOLAR SYSTEM ROOT (SUN IS THE CENTER) -->
+  <a-entity id="solar-system" position="-7 3 0">
+
+    <!-- SUN (STAYS FIXED) -->
+    <a-sphere radius="2.3" src="#sun"></a-sphere>
+
+    <!-- MERCURY -->
+    <a-entity animation="property: rotation; to: 0 360 0; loop: true; dur: 4000">
+      <a-ring radius-inner="2.95" radius-outer="3"
+              rotation="-90 0 0"
+              material="color: white; opacity: 0.25"></a-ring>
+
+      <a-sphere radius="0.3" position="3 0 0" src="#mercury"></a-sphere>
+      <a-text value="Mercury"
+              position="3 0.9 0"
+              color="white"
+              scale="2 2 2"
+              align="center"></a-text>
+    </a-entity>
+
+    <!-- VENUS -->
+    <a-entity animation="property: rotation; to: 0 360 0; loop: true; dur: 7000">
+      <a-ring radius-inner="4.15" radius-outer="4.2"
+              rotation="-90 0 0"
+              material="color: white; opacity: 0.25"></a-ring>
+
+      <a-sphere radius="0.5" position="4.2 0 0" src="#venus"></a-sphere>
+      <a-text value="Venus"
+              position="4.2 1.1 0"
+              color="white"
+              scale="2 2 2"
+              align="center"></a-text>
+    </a-entity>
+
+    <!-- EARTH -->
+    <a-entity animation="property: rotation; to: 0 360 0; loop: true; dur: 10000">
+      <a-ring radius-inner="5.45" radius-outer="5.5"
+              rotation="-90 0 0"
+              material="color: white; opacity: 0.25"></a-ring>
+
+      <a-sphere radius="0.5" position="5.5 0 0" src="#earth"></a-sphere>
+      <a-text value="Earth"
+              position="5.5 1.1 0"
+              color="white"
+              scale="2 2 2"
+              align="center"></a-text>
+    </a-entity>
+
+    <!-- MARS -->
+    <a-entity animation="property: rotation; to: 0 360 0; loop: true; dur: 14000">
+      <a-ring radius-inner="6.75" radius-outer="6.8"
+              rotation="-90 0 0"
+              material="color: white; opacity: 0.25"></a-ring>
+
+      <a-sphere radius="0.4" position="6.8 0 0" src="#mars"></a-sphere>
+      <a-text value="Mars"
+              position="6.8 1 0"
+              color="white"
+              scale="2 2 2"
+              align="center"></a-text>
+    </a-entity>
+
+    <!-- JUPITER -->
+    <a-entity animation="property: rotation; to: 0 360 0; loop: true; dur: 20000">
+      <a-ring radius-inner="8.75" radius-outer="8.8"
+              rotation="-90 0 0"
+              material="color: white; opacity: 0.25"></a-ring>
+
+      <a-sphere radius="1.1" position="8.8 0 0" src="#jupiter"></a-sphere>
+      <a-text value="Jupiter"
+              position="8.8 1.8 0"
+              color="white"
+              scale="2.2 2.2 2.2"
+              align="center"></a-text>
+    </a-entity>
+
+    <!-- SATURN -->
+    <a-entity animation="property: rotation; to: 0 360 0; loop: true; dur: 26000">
+      <a-ring radius-inner="10.95" radius-outer="11"
+              rotation="-90 0 0"
+              material="color: white; opacity: 0.25"></a-ring>
+
+      <a-sphere radius="1" position="11 0 0" src="#saturn"></a-sphere>
+      <a-text value="Saturn"
+              position="11 1.7 0"
+              color="white"
+              scale="2.2 2.2 2.2"
+              align="center"></a-text>
+    </a-entity>
+
+    <!-- URANUS -->
+    <a-entity animation="property: rotation; to: 0 360 0; loop: true; dur: 32000">
+      <a-ring radius-inner="12.95" radius-outer="13"
+              rotation="-90 0 0"
+              material="color: white; opacity: 0.25"></a-ring>
+
+      <a-sphere radius="0.8" position="13 0 0" src="#uranus"></a-sphere>
+      <a-text value="Uranus"
+              position="13 1.5 0"
+              color="white"
+              scale="2.2 2.2 2.2"
+              align="center"></a-text>
+    </a-entity>
+
+    <!-- NEPTUNE -->
+    <a-entity animation="property: rotation; to: 0 360 0; loop: true; dur: 38000">
+      <a-ring radius-inner="14.95" radius-outer="15"
+              rotation="-90 0 0"
+              material="color: white; opacity: 0.25"></a-ring>
+
+      <a-sphere radius="0.8" position="15 0 0" src="#neptune"></a-sphere>
+      <a-text value="Neptune"
+              position="15 1.5 0"
+              color="white"
+              scale="2.2 2.2 2.2"
+              align="center"></a-text>
+    </a-entity>
+
+  </a-entity>
+
+</a-scene>
+
+</body>
+</html>
